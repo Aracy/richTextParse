@@ -1,0 +1,5 @@
+<!--component/richText.wxml-->
+<view id='measureLen' wx:if="{{!width}}" style='width: 100%;height: 3rpx;' />
+
+<import src='./wxParse.wxml' />
+<template is="wxParse" data="{{wxParseData:article.nodes}}" />

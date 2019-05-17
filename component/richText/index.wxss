@@ -1,0 +1,2 @@
+/* component/richText.wxss */
+@import './wxParse.wxss'

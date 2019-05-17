@@ -1,0 +1,4 @@
+<!--component/index.wxml-->
+<view style='padding:40rpx 60rpx; font-size: 26rpx;'>
+    <richText bindLinkTap="onATap" content='<p class="usequote_material" data-material="75"><a href="https://www.baidu.com">baidu</a><img class="fr-dii fr-draggable" src="http://cms.plantasia.asia/FileFolder/Uploader/20190505/3722d58fb6cb415e825b1e98a6044bfb_500.png" ></p>' />
+</view>
