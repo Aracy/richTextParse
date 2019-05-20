@@ -29,21 +29,26 @@ Component({
             if (!this.data.width) {
                 return
             }
-            Parse.wxParse('article', 'html', content, this, 0)
-        }
+            Parse.wxParse('article', 'html', content, this)
+        },
+
     },
 
     /**
      * 组件的方法列表
      */
     methods: {
-        measureLength() {
-            wx.createSelectorQuery().in(this).select('#measureLen').boundingClientRect(res => {
+        /**
+         * 测量自定义组件的宽度
+         */
+        measureWidth() {
+            wx.createSelectorQuery().in(this).select('#measureWidth').boundingClientRect(res => {
                 this.setData({
                     width: res.width
                 })
             }).exec()
         },
+
         /**
          * 图片加载成功
          * 
@@ -84,6 +89,7 @@ Component({
                 [keyH]: autoHeight,
                 [`${key}.imgStyle`]: this.data.imgStyle,
             })
+            this.triggerEvent('ImgLoad', event.detail)
         },
 
         /**
@@ -100,15 +106,14 @@ Component({
      */
     lifetimes: {
         ready() {
-            this.measureLength();
+            this.measureWidth();
             if (this.data.article) {
                 return
             }
-            Parse.wxParse('article', 'html', this.data.content, this, 0)
+            Parse.wxParse('article', 'html', this.data.content, this)
             setTimeout(() => {
                 console.log(this)
-            }, 1500)
-            console.log(__wxAppCode__)
+            }, 200)
         }
     }
 })
