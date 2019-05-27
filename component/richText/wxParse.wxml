@@ -13,13 +13,13 @@
 <template name="wxParseVideo">
     <!--增加video标签支持，并循环添加-->
     <!-- <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}"> -->
-    <video class="{{item.classStr}} wxParse-{{item.tag}}-video" src="{{item.attr.src}}"  />
+    <video class="{{item.classStr}} wxParse-{{item.tag}}-video" src="{{item.attr.src}}" />
     <!-- </view> -->
 </template>
 
 <template name="wxParseImg">
-    <image class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-src="{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="{{item.attr.src}}" show-menu-by-longpress bindload="wxParseImgLoad" bindtap="wxParseImgTap" style="width:{{item.width}}px;height:{{item.height}}px;{{item.imgStyle}}"
-    />
+    <image class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-src="{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="{{item.attr.src}}" lazy-load="{{item.lazyLoad}}" show-menu-by-longpress bindload="wxParseImgLoad" bindtap="wxParseImgTap"
+        style="width:{{item.width}}px;height:{{item.height}}px;{{item.imgStyle}}" />
 </template>
 
 <template name="WxEmojiView">

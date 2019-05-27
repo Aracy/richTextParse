@@ -13,6 +13,11 @@ Component({
         imgStyle: {
             type: String,
             value: ''
+        },
+        //图片的懒加载
+        lazyLoad: {
+            type: Boolean,
+            value: true
         }
     },
 
@@ -111,9 +116,6 @@ Component({
                 return
             }
             Parse.wxParse('article', 'html', this.data.content, this)
-            setTimeout(() => {
-                console.log(this)
-            }, 200)
         }
     }
 })
